@@ -1,6 +1,10 @@
+import MyNavbar from "../../components/navbar/MyNavbar";
+
 function About(){
     return(
-        <div>about</div>
+        <>
+        <MyNavbar/>
+        </>
     );
 }
 
