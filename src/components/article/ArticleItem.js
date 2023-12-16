@@ -5,7 +5,7 @@ import './ArticleItem.css'
 
 function ArticleItem(){
     return(
-        <Card style={{ width: '18rem' }}>
+        <Card >
         <Card.Img variant="top" src="https://dl.next1code.ir/images/react/article1.webp" />
         <Card.Body>
           <Card.Title className="py-2">عنوان مقاله اول</Card.Title>
