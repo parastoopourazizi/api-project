@@ -10,23 +10,39 @@ function AddArticle(){
        <MyNavbar/>
        <div  className="formcontainer">
        <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+      <Form.Group className="mb-3">
+        <Form.Label> عنوان مقاله</Form.Label>
+        <Form.Control type="text" placeholder="عنوان مقاله را وارد کنید" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+      <Form.Group className="mb-3">
+        <Form.Label>  توضیح کوتاه</Form.Label>
+        <Form.Control type="text" placeholder="یک توضیح کوتاه در مقاله را وارد کنید" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+
+      <Form.Group className="mb-3">
+        <Form.Label>   نویسنده مقاله</Form.Label>
+        <Form.Control type="text" placeholder="نام نویسنده مقاله را وارد کنید" />
       </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
+
+      <Form.Group className="mb-3">
+        <Form.Label>   موضوع مقاله</Form.Label>
+        <Form.Control type="text" placeholder="موضوع مقاله را وارد کنید" />
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>   عکس مقاله</Form.Label>
+        <Form.Control type="text" placeholder=" آدرس عکس مقاله را وارد کنید" />
+      </Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>   مدت زمان خواندن مقاله</Form.Label>
+        <Form.Control type="number" placeholder="" />
+      </Form.Group>
+
+     
+      <Button variant="primary" type="button">
+        ساخت مقاله
       </Button>
     </Form>
        </div>
