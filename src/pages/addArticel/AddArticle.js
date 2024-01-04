@@ -12,15 +12,34 @@ function AddArticle(){
   const [formData , setFormData]= useState({})
 
   const addArticleHandler = ()=>{
-    axios.post('http://localhost:5000/article' , formData)
-    Swal.fire({
-      title:'مقاله جدید با موفقیت ثبت شد',
-      timer:1500,
-      timerProgressBar:true,
-      showConfirmButton:false
+    axios.post('http://localhost:5000/article1' , formData)
+    .then(response => {
+      if(response.status === 201) {
+        Swal.fire({
+          title:'مقاله جدید با موفقیت ثبت شد',
+          timer:1500,
+          timerProgressBar:true,
+          showConfirmButton:false
+    
+    
+        })
 
+      }
+    })
+    .catch(error => {
+      Swal.fire({
+        title:'مقاله  ثبت نشد',
+        timer:1500,
+        timerProgressBar:true,
+        showConfirmButton:false
+  
+  
+      })
 
     })
+
+
+    
 
   }
   
