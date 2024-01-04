@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import './AddArticle.css'
 import axios from "axios";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 
 function AddArticle(){
@@ -12,11 +13,20 @@ function AddArticle(){
 
   const addArticleHandler = ()=>{
     axios.post('http://localhost:5000/article' , formData)
+    Swal.fire({
+      title:'مقاله جدید با موفقیت ثبت شد',
+      timer:1500,
+      timerProgressBar:true,
+      showConfirmButton:false
+
+
+    })
 
   }
   
   const formHandler = ( e , propertyName)=> {
-    setFormData( {...formData , [propertyName] : e.target.value})
+    setFormData( {...formData , [e.target.name] : e.target.value})
+    
     
   }
        
