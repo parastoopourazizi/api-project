@@ -10,9 +10,23 @@ import Swal from "sweetalert2";
 function AddArticle(){
   
   const [formData , setFormData]= useState({})
+  const resetFormData = ()=> {
+    setFormData({
+      title: '',
+      desc: '',
+      wrriter:'',
+      category:'',
+      image:'',
+      readingTime:''
+
+    })
+
+    
+  }
 
   const addArticleHandler = ()=>{
-    axios.post('http://localhost:5000/article1' , formData)
+    axios.post('http://localhost:5000/article' , formData)
+  
     .then(response => {
       if(response.status === 201) {
         Swal.fire({
@@ -37,6 +51,7 @@ function AddArticle(){
       })
 
     })
+    resetFormData()
 
 
     
@@ -48,10 +63,7 @@ function AddArticle(){
     
     
   }
-       
     
-    
-  
     return(
        <>
        <MyNavbar/>
@@ -60,6 +72,7 @@ function AddArticle(){
       <Form.Group className="mb-3">
         <Form.Label> عنوان مقاله</Form.Label>
         <Form.Control
+        value={formData.title}
         name="title"
          onChange={ formHandler} type="text" placeholder="عنوان مقاله را وارد کنید" />
       </Form.Group>
@@ -67,6 +80,7 @@ function AddArticle(){
       <Form.Group className="mb-3">
         <Form.Label>  توضیح کوتاه</Form.Label>
         <Form.Control
+        value={formData.desc}
         name="desc"
          onChange={ formHandler} type="text" placeholder="یک توضیح کوتاه در مقاله را وارد کنید" />
       </Form.Group>
@@ -74,13 +88,15 @@ function AddArticle(){
       <Form.Group className="mb-3">
         <Form.Label>   نویسنده مقاله</Form.Label>
         <Form.Control
-        name="writer"
+        value={formData.wrriter}
+        name="wrriter"
          onChange={ formHandler} type="text" placeholder="نام نویسنده مقاله را وارد کنید" />
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>   موضوع مقاله</Form.Label>
         <Form.Control
+        value={formData.category}
         name="category"
         onChange={ formHandler} type="text" placeholder="موضوع مقاله را وارد کنید" />
       </Form.Group>
@@ -88,6 +104,7 @@ function AddArticle(){
       <Form.Group className="mb-3">
         <Form.Label>   عکس مقاله</Form.Label>
         <Form.Control
+        value={formData.image}
         name="image"
         onChange={ formHandler} type="text" placeholder=" آدرس عکس مقاله را وارد کنید" />
       </Form.Group>
@@ -95,6 +112,7 @@ function AddArticle(){
       <Form.Group className="mb-3">
         <Form.Label>   مدت زمان خواندن مقاله</Form.Label>
         <Form.Control
+        value={formData.readingTime}
         name="readingTime"
          onChange={ formHandler} type="number" placeholder="" />
       </Form.Group>
